@@ -34,7 +34,8 @@ let answer1  =  "1: Most calories caried by on elf is " ^ string_of_int most_cal
 
 let answer2  = 
     let int_answer_2 =
-        List.sort Stdlib.compare (read_elves file) 
+        read_elves file
+        |> List.sort Stdlib.compare
         |> List.rev
         |> first_n 3
         |> List.fold_left(fun acc x -> acc + x) 0  in
