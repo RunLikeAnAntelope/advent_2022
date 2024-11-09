@@ -33,11 +33,11 @@ let rec first_n n lst =
 let answer1  =  "1: Most calories caried by on elf is " ^ string_of_int most_calories
 
 let answer2  = 
-    let sorted_list = List.sort Stdlib.compare (read_elves file) in 
-    let rev_sorted_list = List.rev sorted_list in
-    let first_3 = first_n 3 rev_sorted_list in 
-    let sum lst = List.fold_left(fun acc x -> acc + x) 0 lst in
-    let answer = sum first_3 in
-    "2: Calories carried by top 3 elves is " ^ string_of_int answer
+    let int_answer_2 =
+        List.sort Stdlib.compare (read_elves file) 
+        |> List.rev
+        |> first_n 3
+        |> List.fold_left(fun acc x -> acc + x) 0  in
+    "2: Calories carried by top 3 elves is " ^ string_of_int int_answer_2 
 
 
