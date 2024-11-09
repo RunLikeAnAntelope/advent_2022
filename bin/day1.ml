@@ -1,4 +1,4 @@
-let file = "advent.txt"
+let file = "advent1.txt"
 
 (*Day One, question One Answer*)
 let rec max_calories inc curVal maxVal =
@@ -30,17 +30,14 @@ let rec first_n n lst =
         |[]-> []
         | h :: t -> if n = 1 then [h] else h :: first_n (n-1) t
 
-let answer1 () = print_string "    1: Most calories caried by on elf is ";
-    print_int most_calories;
-    print_endline ""
+let answer1  =  "1: Most calories caried by on elf is " ^ string_of_int most_calories
 
-let answer2 () = 
+let answer2  = 
     let sorted_list = List.sort Stdlib.compare (read_elves file) in 
     let rev_sorted_list = List.rev sorted_list in
     let first_3 = first_n 3 rev_sorted_list in 
     let sum lst = List.fold_left(fun acc x -> acc + x) 0 lst in
     let answer = sum first_3 in
-    print_string "    2: Calories carried by top 3 elves is ";
-    print_int answer
+    "2: Calories carried by top 3 elves is " ^ string_of_int answer
 
 
