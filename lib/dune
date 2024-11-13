@@ -1,2 +1,5 @@
 (library
- (name advent_2022))
+ (name solutions)
+ (modules one two)
+ )
+

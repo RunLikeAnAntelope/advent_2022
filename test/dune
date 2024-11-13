@@ -1,2 +1,4 @@
 (test
- (name test_advent_2022))
+ (name test_advent_2022)
+ (libraries solutions ounit2)
+)

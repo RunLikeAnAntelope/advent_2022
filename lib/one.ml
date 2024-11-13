@@ -1,5 +1,3 @@
-let file = "advent1.txt"
-
 (*Day One, question One Answer*)
 let rec max_calories inc curVal maxVal =
     match input_line inc with
@@ -7,7 +5,7 @@ let rec max_calories inc curVal maxVal =
     | l -> max_calories inc (int_of_string l + curVal) maxVal
     | exception End_of_file -> max curVal maxVal 
 
-let most_calories = let channel = open_in file in
+let most_calories file = let channel = open_in file in
     max_calories channel 0 0
 
 let rec acc_elves channel acc lst =
@@ -30,15 +28,15 @@ let rec first_n n lst =
         |[]-> []
         | h :: t -> if n = 1 then [h] else h :: first_n (n-1) t
 
-let answer1  =  "1: Most calories caried by on elf is " ^ string_of_int most_calories
+let answer1 file =  "1: Most calories caried by on elf is " ^ (string_of_int (most_calories file))
 
-let answer2  = 
+let answer2  file = 
     let int_answer_2 =
         read_elves file
         |> List.sort Stdlib.compare
         |> List.rev
         |> first_n 3
         |> List.fold_left(fun acc x -> acc + x) 0  in
-    "2: Calories carried by top 3 elves is " ^ string_of_int int_answer_2 
+    "2: Calories carried by top 3 elves is " ^ (string_of_int int_answer_2) 
 
 

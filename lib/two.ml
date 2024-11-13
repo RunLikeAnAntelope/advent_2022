@@ -1,4 +1,4 @@
-let filename = "advent2.txt"
+let filename = "./resources/advent2.txt"
 
 let freebie x = if x = 'X' then 1 else if x = 'Y' then 2 else 3
 
@@ -25,8 +25,8 @@ let rec read_strat channel (lst:string list) =
 let read_strategy filename = let channel = open_in filename in
     read_strat channel []
 
-let calculate_answer1 = 
-    read_strategy "advent2.txt"
+let calculate_answer1 file = 
+    read_strategy file 
     |> acc_strat
 
-let answer1 = "1: Strategy Score = " ^ (string_of_int (calculate_answer1))
+let answer1 file = "1: Strategy Score = " ^ (string_of_int (calculate_answer1 file))
