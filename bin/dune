@@ -1,4 +1,8 @@
 (executable
  (public_name advent_2022)
  (name main)
- (libraries advent_2022))
+ (libraries advent_2022 ounit2))
+(executable 
+  (public_name test)
+  (name day2test)
+  (libraries advent_2022 ounit2))
