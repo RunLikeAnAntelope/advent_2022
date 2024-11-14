@@ -1,1 +1,1 @@
-(env(debug(flags (:standard -g))))
+(env(dev(flags (:standard))))
