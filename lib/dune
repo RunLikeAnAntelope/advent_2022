@@ -1,5 +1,5 @@
 (library
  (name solutions)
- (modules one two)
+ (modules one two three)
  )
 

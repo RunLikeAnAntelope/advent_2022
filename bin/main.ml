@@ -6,3 +6,6 @@ let () =
     print_endline "Day two answers:";
     print_endline ("    " ^ Solutions.Two.answer1 "./resources/advent2.txt");
     print_endline ("    " ^ Solutions.Two.answer2 "./resources/advent2.txt");
+
+    print_endline "Day three answers:";
+    print_endline ("    " ^ Solutions.Three.answer1 "./resources/advent3.txt");
