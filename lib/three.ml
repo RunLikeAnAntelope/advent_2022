@@ -37,11 +37,13 @@ let read_file filename = let channel = open_in filename in
 
 let calculate_answer1 file = 
     read_file file
-    |> List.map String.to_seq
-    |> List.map List.of_seq
-    |> List.map halves
-    |> List.map ruck_answer
-    |> List.map priority
+    |> List.map (fun x -> 
+        x 
+        |> String.to_seq 
+        |> List.of_seq
+        |> halves
+        |> ruck_answer
+        |> priority)
     |> List.fold_left (fun acc x -> acc + x) 0
 
 let answer1 file = "1: Sum of priorites = " ^ string_of_int (calculate_answer1 file) 
