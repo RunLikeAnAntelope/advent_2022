@@ -9,3 +9,4 @@ let () =
 
     print_endline "Day three answers:";
     print_endline ("    " ^ Solutions.Three.answer1 "./resources/advent3.txt");
+    print_endline ("    " ^ Solutions.Three.answer2 "./resources/advent3.txt");
